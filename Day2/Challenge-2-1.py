@@ -29,7 +29,7 @@ def isPalindromesol3(string):
 def isPalindromesol4(string, index=0):
     # Write your code here.
     backwardindex = len(string) - 1 - index
-    return True if index >= backwardindex else string[index] == string[backwardindex] and isPalindrome(string, index + 1)
+    return True if index >= backwardindex else string[index] == string[backwardindex] and isPalindromesol4(string, index + 1)
 
 
 # Solution 5 - (Comparison using pointer approach) (Time Complexity O(n) and Space Complexity O(1))
@@ -43,7 +43,8 @@ def isPalindromesol5(string):
             return False
         leftindex += 1
         rightindex -= 1
-    return True
+    else:
+        return True
 
 
 if __name__ == '__main__':
